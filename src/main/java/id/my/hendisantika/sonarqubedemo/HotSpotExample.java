@@ -12,5 +12,8 @@ package id.my.hendisantika.sonarqubedemo;
  * To change this template use File | Settings | File Templates.
  */
 public class HotSpotExample {
+    public boolean isValid(String pin) {
+        return pin.matches(readRegex());
+    }
 
 }
