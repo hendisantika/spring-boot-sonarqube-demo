@@ -18,3 +18,21 @@
     ```
 9. Check the result
 10. Done
+
+### Images Screen shot
+
+Create a new project
+
+![Create a new project](img/create-project.png "Create a new project")
+
+Choose Local
+
+![Choose Local](img/local.png "Choose Local")
+
+Generate a token
+
+![Generate a token](img/token.png "Generate a token")
+
+Check the result
+
+![Check the result](img/result.png "Check the result")
