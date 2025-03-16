@@ -111,4 +111,43 @@
         </plugins>
     </build>
 
+    <profiles>
+        <profile>
+            <id>sonarReports</id>
+
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.owasp</groupId>
+                        <artifactId>dependency-check-maven</artifactId>
+                        <version>6.5.3</version>
+
+                        <configuration>
+                            <mavenSettingsProxyId>https-p</mavenSettingsProxyId>
+                            <outputDirectory>${sonar.dependencyCheck.basePath}</outputDirectory>
+
+                            <formats>
+                                <format>html</format>
+                                <format>json</format>
+                            </formats>
+                        </configuration>
+
+                        <executions>
+                            <execution>
+                                <id>generate-dependency-check-report</id>
+
+                                <goals>
+                                    <goal>aggregate</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
