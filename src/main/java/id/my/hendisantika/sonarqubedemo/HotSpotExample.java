@@ -1,6 +1,7 @@
 package id.my.hendisantika.sonarqubedemo;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.attribute.PosixFilePermissions;
@@ -27,5 +28,13 @@ public class HotSpotExample {
             throw new IllegalArgumentException();
         }
         Files.setPosixFilePermissions(f.toPath(), PosixFilePermissions.fromString("rwxrwxr--"));
+    }
+
+    String readRegex() {
+        try (var file = new FileInputStream("/tmp/regex.txt")) {
+            return new String(file.readAllBytes());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }
