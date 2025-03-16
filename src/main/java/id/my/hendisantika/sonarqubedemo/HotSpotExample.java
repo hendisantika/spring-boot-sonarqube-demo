@@ -1,5 +1,10 @@
 package id.my.hendisantika.sonarqubedemo;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.attribute.PosixFilePermissions;
+
 /**
  * Created by IntelliJ IDEA.
  * Project : spring-boot-sonarqube-demo
@@ -16,4 +21,11 @@ public class HotSpotExample {
         return pin.matches(readRegex());
     }
 
+    public void setPermissions(String filename) throws IOException {
+        File f = new File(filename);
+        if (!isValid(filename)) {
+            throw new IllegalArgumentException();
+        }
+        Files.setPosixFilePermissions(f.toPath(), PosixFilePermissions.fromString("rwxrwxr--"));
+    }
 }
