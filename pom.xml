@@ -15,7 +15,7 @@
     <description>spring-boot-sonarqube-demo</description>
     <properties>
         <java.version>23</java.version>
-        <jacoco.version>0.8.12</jacoco.version>
+        <jacoco.version>0.8.13</jacoco.version>
 
         <sonar.dependencyCheck.basePath>
             ${project.basedir}/owasp-dependency-check-logs
@@ -43,7 +43,7 @@
         <dependency>
             <groupId>org.jacoco</groupId>
             <artifactId>jacoco-maven-plugin</artifactId>
-            <version>0.8.12</version>
+            <version>0.8.13</version>
         </dependency>
 
         <!-- VULNERABLE DEPENDENCY-->
