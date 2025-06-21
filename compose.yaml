@@ -10,13 +10,13 @@ services:
     ports:
       - "9000:9000"
     volumes:
-      - sonarqube_conf:/opt/sonarqube/conf
-      - sonarqube_data:/opt/sonarqube/data
-      - sonarqube_extensions:/opt/sonarqube/extensions
-      - sonarqube_logs:/opt/sonarqube/logs
-      - sonarqube_temp:/opt/sonarqube/temp
+      - ./sonarqube_conf:/opt/sonarqube/conf
+      - ./sonarqube_data:/opt/sonarqube/data
+      - ./sonarqube_extensions:/opt/sonarqube/extensions
+      - ./sonarqube_logs:/opt/sonarqube/logs
+      - ./sonarqube_temp:/opt/sonarqube/temp
   sonar_db:
-    image: postgres:17.4-alpine3.21
+    image: postgres:17.5-alpine3.22
     ports:
       - "5433:5432"
     environment:
@@ -24,8 +24,8 @@ services:
       POSTGRES_PASSWORD: sonar
       POSTGRES_DB: sonar
     volumes:
-      - sonar_db:/var/lib/postgresql
-      - sonar_db_data:/var/lib/postgresql/data
+      - ./sonar_db:/var/lib/postgresql
+      - ./sonar_db_data:/var/lib/postgresql/data
 
 volumes:
   sonarqube_conf:
