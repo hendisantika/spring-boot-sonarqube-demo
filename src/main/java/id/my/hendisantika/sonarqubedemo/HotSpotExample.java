@@ -19,15 +19,9 @@ import java.util.Base64;
 import java.util.Random;
 
 /**
- * Created by IntelliJ IDEA.
- * Project : spring-boot-sonarqube-demo
- * User: hendisantika
- * Link: s.id/hendisantika
- * Email: hendisantika@yahoo.co.id
- * Telegram : @hendisantika34
- * Date: 16/03/25
- * Time: 09.48
- * To change this template use File | Settings | File Templates.
+ * Created by IntelliJ IDEA. Project : spring-boot-sonarqube-demo User: hendisantika Link:
+ * s.id/hendisantika Email: hendisantika@yahoo.co.id Telegram : @hendisantika34 Date: 16/03/25 Time:
+ * 09.48 To change this template use File | Settings | File Templates.
  */
 public class HotSpotExample {
     // Hotspot 1: Hardcoded credentials

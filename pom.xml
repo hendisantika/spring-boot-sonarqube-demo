@@ -17,23 +17,22 @@
         <java.version>21</java.version>
         <jacoco.version>0.8.13</jacoco.version>
 
-        <sonar.dependencyCheck.basePath>
-            ${project.basedir}/owasp-dependency-check-logs
-        </sonar.dependencyCheck.basePath>
-        <sonar.dependencyCheck.htmlReportPath>
-            ${sonar.dependencyCheck.basePath}/dependency-check-report.html
+        <sonar.dependencyCheck.basePath>${project.basedir}/owasp-dependency-check-logs</sonar.dependencyCheck.basePath>
+        <sonar.dependencyCheck.htmlReportPath>${sonar.dependencyCheck.basePath}/dependency-check-report.html
         </sonar.dependencyCheck.htmlReportPath>
-        <sonar.dependencyCheck.jsonReportPath>
-            ${sonar.dependencyCheck.basePath}/dependency-check-report.json
+        <sonar.dependencyCheck.jsonReportPath>${sonar.dependencyCheck.basePath}/dependency-check-report.json
         </sonar.dependencyCheck.jsonReportPath>
         <sonar.dependencyCheck.summarize>true</sonar.dependencyCheck.summarize>
-
         <sonar.coverage.exclusions>**/controller/debug/**/*</sonar.coverage.exclusions>
-
         <sonar.exclusions>src/test/**/*</sonar.exclusions>
+        <sonar.exclusions>**/schemas/**,**/config/**</sonar.exclusions>
+        <sonar.coverage.exclusions>**/schemas/**,**/config/**</sonar.coverage.exclusions>
         <sonar.sources>src,pom.xml</sonar.sources>
         <sonar.test.inclusions>src/test/**/*</sonar.test.inclusions>
         <sonar.tests>src</sonar.tests>
+
+        <spotless.version>2.44.5</spotless.version>
+        <palantir.version>2.39.0</palantir.version>
     </properties>
     <dependencies>
         <dependency>
@@ -107,6 +106,73 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.5.3</version> <!-- Use the latest version -->
+            </plugin>
+            <plugin>
+                <groupId>com.rudikershaw.gitbuildhook</groupId>
+                <artifactId>git-build-hook-maven-plugin</artifactId>
+                <version>3.5.0</version>
+                <configuration>
+                    <installHooks>
+                        <pre-commit>hooks/pre-commit</pre-commit>
+                        <commit-msg>hooks/commit-msg</commit-msg>
+                    </installHooks>
+                    <gitConfig>
+                        <!-- The location of the directory you are using to store the Git hooks in your project. -->
+                        <core.hooksPath>githooks</core.hooksPath>
+                        <!-- Some other project specific git config that you want to set. -->
+                        <custom.configuration>true</custom.configuration>
+                    </gitConfig>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <!-- Sets git config specified under configuration > gitConfig. -->
+                            <goal>configure</goal>
+                            <goal>install</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.diffplug.spotless</groupId>
+                <artifactId>spotless-maven-plugin</artifactId>
+                <version>${spotless.version}</version>
+                <configuration>
+                    <!--                    <ratchetFrom>origin/main</ratchetFrom>-->
+                    <java>
+                        <!-- Cleanthat will refactor your code, but it may break your style: apply it before your formatter -->
+                        <cleanthat/>
+                        <palantirJavaFormat>
+                            <version>${palantir.version}</version>                     <!-- optional -->
+                            <style>PALANTIR</style>                       <!-- or AOSP/GOOGLE (optional) -->
+                            <formatJavadoc>false
+                            </formatJavadoc>          <!-- defaults to false (optional, requires at least Palantir 2.39.0) -->
+                        </palantirJavaFormat>
+                        <formatAnnotations/>  <!-- fixes formatting of type annotations, see below -->
+                        <includes>
+                            <include>src/main/java/**/*.java</include>
+                            <include>src/test/java/**/*.java</include>
+                        </includes>
+                        <importOrder/>
+                        <removeUnusedImports/>
+                        <toggleOffOn/>
+                        <trimTrailingWhitespace/>
+                        <endWithNewline/>
+                        <indent>
+                            <tabs>true</tabs>
+                            <spacesPerTab>4</spacesPerTab>
+                        </indent>
+                        <googleJavaFormat/>
+                    </java>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <phase>test</phase>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

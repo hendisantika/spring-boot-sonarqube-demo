@@ -17,15 +17,9 @@ import java.util.Map;
 import java.util.logging.Logger;
 
 /**
- * Created by IntelliJ IDEA.
- * Project : spring-boot-sonarqube-demo
- * User: hendisantika
- * Link: s.id/hendisantika
- * Email: hendisantika@yahoo.co.id
- * Telegram : @hendisantika34
- * Date: 16/03/25
- * Time: 09.56
- * To change this template use File | Settings | File Templates.
+ * Created by IntelliJ IDEA. Project : spring-boot-sonarqube-demo User: hendisantika Link:
+ * s.id/hendisantika Email: hendisantika@yahoo.co.id Telegram : @hendisantika34 Date: 16/03/25 Time:
+ * 09.56 To change this template use File | Settings | File Templates.
  */
 @RestController
 public class IndexController {
@@ -132,9 +126,10 @@ public class IndexController {
 
     // Issue: Overly complex method
     @GetMapping("/complex")
-    public String complexMethod(@RequestParam(required = false) String param1,
-                                @RequestParam(required = false) String param2,
-                                @RequestParam(required = false) String param3) {
+    public String complexMethod(
+            @RequestParam(required = false) String param1,
+            @RequestParam(required = false) String param2,
+            @RequestParam(required = false) String param3) {
         StringBuilder result = new StringBuilder();
 
         if (param1 != null) {

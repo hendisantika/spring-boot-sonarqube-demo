@@ -7,15 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by IntelliJ IDEA.
- * Project : spring-boot-sonarqube-demo
- * User: hendisantika
- * Link: s.id/hendisantika
- * Email: hendisantika@yahoo.co.id
- * Telegram : @hendisantika34
- * Date: 16/03/25
- * Time: 09.47
- * To change this template use File | Settings | File Templates.
+ * Created by IntelliJ IDEA. Project : spring-boot-sonarqube-demo User: hendisantika Link:
+ * s.id/hendisantika Email: hendisantika@yahoo.co.id Telegram : @hendisantika34 Date: 16/03/25 Time:
+ * 09.47 To change this template use File | Settings | File Templates.
  */
 public class BugExample {
     private String name;
@@ -51,6 +45,7 @@ public class BugExample {
     public boolean equals(Object obj) {
         return obj instanceof BugExample;
     }
+
     // Missing hashCode override
 
     // Bug 5: Boxed primitive for identity comparison

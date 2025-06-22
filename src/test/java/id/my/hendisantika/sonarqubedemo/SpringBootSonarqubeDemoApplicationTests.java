@@ -9,5 +9,4 @@ class SpringBootSonarqubeDemoApplicationTests {
     @Test
     void contextLoads() {
     }
-
 }

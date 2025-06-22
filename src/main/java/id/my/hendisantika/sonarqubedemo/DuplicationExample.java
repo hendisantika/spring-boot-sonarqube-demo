@@ -4,15 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by IntelliJ IDEA.
- * Project : spring-boot-sonarqube-demo
- * User: hendisantika
- * Link: s.id/hendisantika
- * Email: hendisantika@yahoo.co.id
- * Telegram : @hendisantika34
- * Date: 16/03/25
- * Time: 09.47
- * To change this template use File | Settings | File Templates.
+ * Created by IntelliJ IDEA. Project : spring-boot-sonarqube-demo User: hendisantika Link:
+ * s.id/hendisantika Email: hendisantika@yahoo.co.id Telegram : @hendisantika34 Date: 16/03/25 Time:
+ * 09.47 To change this template use File | Settings | File Templates.
  */
 public class DuplicationExample {
     // Code smell 1: Unused fields
@@ -82,10 +76,12 @@ public class DuplicationExample {
         System.out.println("Average: " + average);
 
         // Step 4: Even more calculations
-        double standardDeviation = Math.sqrt(
-                (Math.pow(var1 - average, 2) +
-                        Math.pow(var2 - average, 2) +
-                        Math.pow(var3 - average, 2)) / 3);
+        double standardDeviation =
+                Math.sqrt(
+                        (Math.pow(var1 - average, 2)
+                                + Math.pow(var2 - average, 2)
+                                + Math.pow(var3 - average, 2))
+                                / 3);
         System.out.println("Standard Deviation: " + standardDeviation);
 
         // Step 5: Print results in different formats
@@ -137,9 +133,18 @@ public class DuplicationExample {
 
     // Code smell 6: Too many parameters
     public void methodWithTooManyParameters(
-            String param1, String param2, String param3, String param4,
-            int param5, int param6, int param7, int param8,
-            double param9, double param10, boolean param11, boolean param12) {
+            String param1,
+            String param2,
+            String param3,
+            String param4,
+            int param5,
+            int param6,
+            int param7,
+            int param8,
+            double param9,
+            double param10,
+            boolean param11,
+            boolean param12) {
 
         // Method body
         System.out.println("Method with too many parameters");

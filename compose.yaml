@@ -1,12 +1,15 @@
 services:
   sonarqube:
     image: sonarqube:lts-community
+    #    image: sonarqube:2025.3.1-developer
     depends_on:
       - sonar_db
     environment:
       SONAR_JDBC_URL: jdbc:postgresql://sonar_db:5432/sonar
       SONAR_JDBC_USERNAME: sonar
       SONAR_JDBC_PASSWORD: sonar
+      # Add recommended memory settings
+      SONAR_JAVA_OPTS: "-Xmx2048m -Xms1024m"
     ports:
       - "9000:9000"
     volumes:
@@ -15,6 +18,11 @@ services:
       - ./sonarqube_extensions:/opt/sonarqube/extensions
       - ./sonarqube_logs:/opt/sonarqube/logs
       - ./sonarqube_temp:/opt/sonarqube/temp
+    # Add ulimits for production use
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
   sonar_db:
     image: postgres:17.5-alpine3.22
     ports:
