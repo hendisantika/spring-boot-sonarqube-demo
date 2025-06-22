@@ -115,6 +115,7 @@
                     <installHooks>
                         <pre-commit>hooks/pre-commit</pre-commit>
                         <commit-msg>hooks/commit-msg</commit-msg>
+                        <commit-msg>hooks/sonarqube</commit-msg>
                     </installHooks>
                     <gitConfig>
                         <!-- The location of the directory you are using to store the Git hooks in your project. -->
