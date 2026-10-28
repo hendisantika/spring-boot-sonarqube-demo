@@ -77,11 +77,11 @@ public class DuplicationExample {
 
     // Step 4: Even more calculations
     double standardDeviation =
-            Math.sqrt(
-                    (Math.pow(var1 - average, 2)
-                            + Math.pow(var2 - average, 2)
-                            + Math.pow(var3 - average, 2))
-                            / 3);
+        Math.sqrt(
+            (Math.pow(var1 - average, 2)
+                    + Math.pow(var2 - average, 2)
+                    + Math.pow(var3 - average, 2))
+                / 3);
     System.out.println("Standard Deviation: " + standardDeviation);
 
     // Step 5: Print results in different formats
@@ -133,18 +133,18 @@ public class DuplicationExample {
 
   // Code smell 6: Too many parameters
   public void methodWithTooManyParameters(
-          String param1,
-          String param2,
-          String param3,
-          String param4,
-          int param5,
-          int param6,
-          int param7,
-          int param8,
-          double param9,
-          double param10,
-          boolean param11,
-          boolean param12) {
+      String param1,
+      String param2,
+      String param3,
+      String param4,
+      int param5,
+      int param6,
+      int param7,
+      int param8,
+      double param9,
+      double param10,
+      boolean param11,
+      boolean param12) {
 
     // Method body
     System.out.println("Method with too many parameters");
@@ -167,7 +167,7 @@ public class DuplicationExample {
         return "Saturday";
       case 7:
         return "Sunday";
-      // Missing default case
+        // Missing default case
     }
     return null; // This will be reached if day is not 1-7
   }

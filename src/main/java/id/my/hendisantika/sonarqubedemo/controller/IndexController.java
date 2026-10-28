@@ -1,5 +1,9 @@
 package id.my.hendisantika.sonarqubedemo.controller;
 
+import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.logging.Logger;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,11 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.logging.Logger;
 
 /**
  * Created by IntelliJ IDEA. Project : spring-boot-sonarqube-demo User: hendisantika Link:
@@ -127,9 +126,9 @@ public class IndexController {
   // Issue: Overly complex method
   @GetMapping("/complex")
   public String complexMethod(
-          @RequestParam(required = false) String param1,
-          @RequestParam(required = false) String param2,
-          @RequestParam(required = false) String param3) {
+      @RequestParam(required = false) String param1,
+      @RequestParam(required = false) String param2,
+      @RequestParam(required = false) String param3) {
     StringBuilder result = new StringBuilder();
 
     if (param1 != null) {
