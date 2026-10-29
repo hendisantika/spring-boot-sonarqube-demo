@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # SonarQube configuration
-SONAR_HOST="http://localhost:9000"  # Change this to your SonarQube server URL
-SONAR_TOKEN="sqp_b2397f01952a6c192123496891f4850f81a3137f"      # Change this to your SonarQube token
+SONAR_HOST="${SONAR_HOST_URL:-http://localhost:9000}"  # Override with the SONAR_HOST_URL env var
+SONAR_TOKEN="${SONAR_TOKEN:?Set the SONAR_TOKEN environment variable to your SonarQube token}"
 PROJECT_KEY="SonarQube-Demo"  # Change this to match your project
 
 # Threshold configuration
