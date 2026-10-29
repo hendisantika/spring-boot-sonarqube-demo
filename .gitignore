@@ -18,6 +18,13 @@ target/
 *.iml
 *.ipr
 logs
+sonar_db
+sonar_db_data
+sonarqube_conf
+sonarqube_data
+sonarqube_extensions
+sonarqube_logs
+sonarqube_temp
 
 ### NetBeans ###
 /nbproject/private/
