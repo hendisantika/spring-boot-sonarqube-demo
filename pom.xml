@@ -15,7 +15,7 @@
     <description>spring-boot-sonarqube-demo</description>
     <properties>
         <java.version>25</java.version>
-        <jacoco.version>0.8.15</jacoco.version>
+        <jacoco.version>0.8.16</jacoco.version>
 
         <sonar.dependencyCheck.basePath>${project.basedir}/owasp-dependency-check-logs</sonar.dependencyCheck.basePath>
         <sonar.dependencyCheck.htmlReportPath>${sonar.dependencyCheck.basePath}/dependency-check-report.html
@@ -31,7 +31,7 @@
         <sonar.test.inclusions>src/test/**/*</sonar.test.inclusions>
         <sonar.tests>src</sonar.tests>
 
-        <spotless.version>3.10.4</spotless.version>
+        <spotless.version>3.11.0</spotless.version>
         <palantir.version>2.103.0</palantir.version>
     </properties>
     <dependencies>
@@ -42,7 +42,7 @@
         <dependency>
             <groupId>org.jacoco</groupId>
             <artifactId>jacoco-maven-plugin</artifactId>
-            <version>0.8.15</version>
+            <version>0.8.16</version>
         </dependency>
 
         <!-- VULNERABLE DEPENDENCY-->
@@ -110,7 +110,7 @@
             <plugin>
                 <groupId>com.rudikershaw.gitbuildhook</groupId>
                 <artifactId>git-build-hook-maven-plugin</artifactId>
-                <version>3.5.0</version>
+                <version>3.6.0</version>
                 <configuration>
                     <installHooks>
                         <pre-commit>hooks/pre-commit</pre-commit>
