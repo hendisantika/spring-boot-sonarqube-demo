@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>4.1.2</version>
+        <version>4.2.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>id.my.hendisantika</groupId>
@@ -31,7 +31,7 @@
         <sonar.test.inclusions>src/test/**/*</sonar.test.inclusions>
         <sonar.tests>src</sonar.tests>
 
-        <spotless.version>3.11.0</spotless.version>
+        <spotless.version>3.12.0</spotless.version>
         <palantir.version>2.103.0</palantir.version>
     </properties>
     <dependencies>
